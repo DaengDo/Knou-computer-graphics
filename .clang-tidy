@@ -1,0 +1,17 @@
+Checks:
+  - -*
+  - bugprone-*
+  - clang-analyzer-*
+  - concurrency-*
+  - cppcoreguidelines-*
+  # - hicpp-*
+  # - linuxkernel-*
+  - modernize-*
+  # - openmp-*
+  - readability-*
+  - performance-*
+  - portability-*
+# Checks:
+WarningsAsErrors: "-*"
+HeaderFilterRegex: "./"
+FormatStyle: file # 프로젝트 루트에 있는 clang-format 사용하는 옵션
