@@ -120,14 +120,25 @@
 
 #### 그래픽스 파이프라인
 
-openGL
+```
+General           | OpenGL
+----------------------------------------------
+1. Application    |
+----------------------------------------------
+                  | 1. Vertex Puller
+2. Geometry       | 2. Vertex Shader
+Processing        | 3. Tessllation Control Shader
+                  | 4. Tessllation Primitive Gen.
+                  | 5. Tessllation Evaluation Shader
+                  | 6. Geometry Shader
+----------------------------------------------
+3. Resterization  | 7. Resterization
+----------------------------------------------
+4. Pixel          | 8. Fragment Shader
+Processing        | 9. output
+```
 
-1. Vertex Puller
-2. Vertex Shader
-3. Tessllation Control Shader
-4. Tessllation Primitive Gen.
-5. Tessllation Evaluation Shader
-6. Geometry Shader
-7. Resterization
-8. Fragment Shader
-9. output
+(관련된 리얼-타임 렌더링 요약)
+```
+그래픽스 파이프라인은 여러 단계를 병렬로 처리해 렌더링 속도를 높이는 방식이다. 각 단계는 이전 단계의 결과를 받아 가공하고, 가장 느린 단계(병목) 속도에 의해 전체 처리량이 결정된다. 실시간 렌더링 파이프라인은 크게 CPU에서 실행되는 응용 단계(물리, 애니메이션 등), GPU에서 기하 처리 단계(변환·투영), 래스터화 단계(삼각형 픽셀화), 픽셀 처리 단계(컬러 계산·혼합)로 나뉘며, 이 과정을 통해 초당 여러 장의 이미지를 빠르게 생성한다.
+```
