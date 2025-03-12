@@ -9,5 +9,4 @@ add_subdirectory(third_party/glfw)
 add_library(glad third_party/glad/src/glad.c)
 target_include_directories(glad PUBLIC third_party/glad/include)
 
-add_executable(MyApp "./test.cpp")
-target_link_libraries(MyApp PRIVATE glfw glad)
+add_subdirectory("1_cpp_opengl/01_triangle")
