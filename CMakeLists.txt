@@ -61,3 +61,4 @@ endif()
 
 # cpp opengl
 add_subdirectory("1_cpp_opengl/01_triangle")
+add_subdirectory("1_cpp_opengl/02_lines")
